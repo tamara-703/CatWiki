@@ -13,36 +13,28 @@
     <div>
         <h3>Please fill out the following form to get you started</h3>
     <select class="cat-selection" onchange="getSelectedValue">
+        <option selected disabled>--Select A Breed--</option>
         <option value="abys">Abyssinian</option>
         <option value="bali">Balinese</option>
         <option value="cspa">California Spangled</option>
         <option value="drex">Devon Rex</option>
     </select>
-
-
-    
-    <form id="main-form" onsubmit="(e) => processForm(e)">
-        <label for="first-name">First name</label>
-        <input type="text">
-        <label for="last-name">Last name</label>
-        <input type="text">
-        <label for="adoption">Looking for</label>
-        <input class= 'checkSelectionCat' type="checkbox" value="cats" onclick="getValue">Cats
-        <input class= 'checkSelectionDog' type="checkbox" value="dogs" onclick="getValue">Dogs
-        <input type="submit">
-    </form>
     </div>
-
-    <div class="pet-display-container toggle-display"></div>
-
-
-    <img class='main-page-img' src="https://imgix.bustle.com/uploads/image/2022/11/9/cdb56df8-923d-478b-a3ee-c95a00febb63-gettyimages-979081604.jpg?w=400&h=300&fit=crop&crop=faces&auto=format%2Ccompress"
-         height="600px"
-         width="600px">
-
 
     </div>
 
+    <div class="pet-display-container">
+        <!-- <img src="https://imgix.bustle.com/uploads/image/2022/11/9/cdb56df8-923d-478b-a3ee-c95a00febb63-gettyimages-979081604.jpg?w=400&h=300&fit=crop&crop=faces&auto=format%2Ccompress"
+             width="300px"
+             height="300px"> -->
+        <div class="labels">
+            <!-- <p>Origin</p>
+            <p>Alternate name</p> -->
+        </div>
+        <!-- <p>Description</p>
+        <img src="./images/2.png" width="200px"> -->
+
+    </div>
 
 
     <script src="main.js"></script>

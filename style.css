@@ -21,6 +21,17 @@ body {
     margin-left: 100px;
 }
 
+.labels p {
+    display: inline-block;
+    width: 200px;
+    border: solid 5px black;
+    background-color: beige;
+}
+
+
+
+
+
 .toggle-display {
     display: none;
 }
