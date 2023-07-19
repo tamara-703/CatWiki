@@ -9,3 +9,18 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.pet-display-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.img-display {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.toggle-display {
+    display: none;
+}
