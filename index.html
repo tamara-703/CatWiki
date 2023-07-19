@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Adoption Center</title>
+</head>
+<body>
+    <h1 class="welcome-header">Welcome to the cats and dogs adoption center</h1>
+
+    <div class="form-container">
+
+    <div>
+        <h3>Please fill out the following form to get you started</h3>
+    <form id="main-form" onsubmit="(e) => processForm(e)">
+        <label for="first-name">First name</label>
+        <input type="text">
+        <label for="last-name">Last name</label>
+        <input type="text">
+        <label for="adoption">Looking for</label>
+        <select id="selection" onchange="(e) => getSelectedValue(e)">
+            <option selected disabled>--Pick an option--</option>
+            <option value="cat">Cat</option>
+            <option value="'dog">Dog</option>
+        </select>
+        <input type="submit">
+    </form>
+    </div>
+
+    <img id='main-page-img' src="https://imgix.bustle.com/uploads/image/2022/11/9/cdb56df8-923d-478b-a3ee-c95a00febb63-gettyimages-979081604.jpg?w=400&h=300&fit=crop&crop=faces&auto=format%2Ccompress"
+         height="600px"
+         width="600px">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
