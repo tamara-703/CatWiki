@@ -12,6 +12,15 @@
     <div class="form-container">
     <div>
         <h3>Please fill out the following form to get you started</h3>
+    <select class="cat-selection" onchange="getSelectedValue">
+        <option value="abys">Abyssinian</option>
+        <option value="bali">Balinese</option>
+        <option value="cspa">California Spangled</option>
+        <option value="drex">Devon Rex</option>
+    </select>
+
+
+    
     <form id="main-form" onsubmit="(e) => processForm(e)">
         <label for="first-name">First name</label>
         <input type="text">
@@ -23,7 +32,7 @@
         <input type="submit">
     </form>
     </div>
-    
+
     <div class="pet-display-container toggle-display"></div>
 
 

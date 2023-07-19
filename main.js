@@ -10,6 +10,23 @@ let mainFormEl = document.getElementById('main-form');
 let petDisplayEl = document.querySelector('.pet-display-container');
 let mainContainerEl = document.querySelector('.form-container');
 
+
+
+document.querySelector('.cat-selection').addEventListener('change', getSelectedValue);
+function getSelectedValue(e)
+{
+    e.preventDefault();
+    console.log(e.target.value);
+
+    let catBreed = e.target.value;
+
+    let data = getCatAPI(catBreed);
+
+    data.then((result) => {
+        console.log(result);
+    })
+}
+
 document.querySelector('.checkSelectionCat').addEventListener('click', getValue);
 document.querySelector('.checkSelectionDog').addEventListener('click',getValue);
 function getValue(e) {
@@ -44,7 +61,7 @@ function processValue(value)
             console.log('you picked cats');
             const resp = getCatAPI();
 
-            resp.then((result) => {
+                resp.then((result) => {
                 console.log(result);
 
                 result.map((item) => {
@@ -59,53 +76,7 @@ function processValue(value)
             })
 
 
-            const dataArr = [
-                {
-                    breeds: [],
-                    name: 'example name',
-                    url: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg'
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                },
-                {
-                    breeds: [],
-                    name: "example name 2",
-                    url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Adorable-animal-cat-20787.jpg"
-                }
-            ]
+
 
             // dataArr.map((item) => {
 
@@ -138,14 +109,9 @@ function processValue(value)
     })
 }
 
-const getCatAPI = async () => {
+const getCatAPI = async (catBreed) => {
 
-    // const resp = await fetch(`${baseURL}&api_key=live_${apiKey}`).then(data => {
-    //     const response = data.json();
-    //     return response;
-    // })
-
-    const resp = await fetch(`${baseURL}&api_key=live_${apiKey}`);
+    const resp = await fetch(`${baseURL}&breed_ids=${catBreed}&api_key=live_${apiKey}`);
     const data = resp.json();
 
     return data;
