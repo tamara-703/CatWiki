@@ -7,7 +7,8 @@ const apiKey = 'd6UMByrl4eANDsX8UCdJzCqwHeH7zcdKlejRIUiVidyBfILxCyzTfjfMFsEyPhiI
 
 let welcEl = document.getElementsByClassName('welcome-header');
 let mainFormEl = document.getElementById('main-form');
-let petDisplayEl = document.querySelector('.pet-display-container');
+let petDisplayEl = document.querySelector('.card');
+let petCardHolderEl = document.querySelector('.card-body')
 let mainContainerEl = document.querySelector('.form-container');
 
 document.querySelector('.cat-selection').addEventListener('change', getSelectedValue);
@@ -26,33 +27,45 @@ function getSelectedValue(e)
         result.map((item) => {
             console.log(item);
             const imgEl = document.createElement('img');
-            imgEl.classList.add('img-display');
+            imgEl.classList.add('card-img-top');
+            // imgEl.classList.add('img-display');
+            // imgEl.classList.add('img-thumbnail');
             imgEl.setAttribute('src', `${item.url}`);
-            imgEl.setAttribute('width', '300px');
 
             //append image to the div element as a child
             petDisplayEl.append(imgEl);
 
+            const nameEl = document.createElement('h5');
+            nameEl.innerText = `${item.breeds[0].name}`;
+            nameEl.classList.add('card-title');
+
             const originEl = document.createElement('p');
             originEl.innerText = `Origin - ${item.breeds[0].origin}`;
+
 
             const altNameEl = document.createElement('p');
             altNameEl.innerText = `Alternative name - ${item.breeds[0].alt_names}`;
 
-            const labelsEl = document.querySelector('.labels');
-            labelsEl.append(originEl,altNameEl);
-
 
             const descEl = document.createElement('p');
-            descEl.innerText = `Description - ${item.breeds[0].description}`;
+            descEl.innerText = `${item.breeds[0].description}`;
+            descEl.classList.add('card-text');
 
-            const wikiBtn = document.createElement('button');
-            wikiBtn.innerText = 'More information';
-            wikiBtn.setAttribute('onClick', 'getLink');
+            const wikiEl = document.createElement('a');
+            wikiEl.innerText = 'Wikipedia';
+            wikiEl.setAttribute('href', `${item.breeds[0].wikipedia_url}`);
+            wikiEl.setAttribute('target', "_blank");
+            wikiEl.classList.add('btn');
+            wikiEl.classList.add('btn-primary');
 
-            petDisplayEl.append(labelsEl, descEl, wikiBtn);
+            petCardHolderEl.append(nameEl,descEl,wikiEl);
 
-            petDisplayEl.classList.remove('toggle-display');
+            petDisplayEl.append(petCardHolderEl);
+            petDisplayEl.removeAttribute('style');
+            petDisplayEl.setAttribute('style', 'width: 18rem');
+            petDisplayEl.setAttribute('style', 'margin: 20px');
+
+
             })
 
 

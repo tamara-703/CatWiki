@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Adoption Center</title>
 </head>
 <body>
-    <h1 class="welcome-header">Welcome to the cats and dogs adoption center</h1>
+
 
     <div class="form-container">
+    <img class="logo-img" src="https://miro.medium.com/v2/resize:fit:2400/1*ZtNk3gA2AXSOw8ofZP8KYg.jpeg" width="300px">
     <div>
-        <h3>Please fill out the following form to get you started</h3>
-    <select class="cat-selection" onchange="getSelectedValue">
+        <h3>Choose a breed</h3>
+    <select class="cat-selection form-select" onchange="getSelectedValue" aria-label="Default select example">
         <option selected disabled>--Select A Breed--</option>
         <option value="abys">Abyssinian</option>
         <option value="bali">Balinese</option>
@@ -23,18 +25,10 @@
 
     </div>
 
-    <div class="pet-display-container">
-        <!-- <img src="https://imgix.bustle.com/uploads/image/2022/11/9/cdb56df8-923d-478b-a3ee-c95a00febb63-gettyimages-979081604.jpg?w=400&h=300&fit=crop&crop=faces&auto=format%2Ccompress"
-             width="300px"
-             height="300px"> -->
-        <div class="labels">
-            <!-- <p>Origin</p>
-            <p>Alternate name</p> -->
+    <div class="card" style="display: none;">
+        <div class="card-body">
         </div>
-        <!-- <p>Description</p>
-        <img src="./images/2.png" width="200px"> -->
-
-    </div>
+      </div>
 
 
     <script src="main.js"></script>

@@ -1,13 +1,23 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80");
+    background-image: url("https://e0.pxfuel.com/wallpapers/541/770/desktop-wallpaper-white-plain-background-dirty-white.jpg");
     height: 100vh;
     width: 100vw;
 
 }
 
+.logo-img {
+    border: solid black;
+    border-radius: 25% 10%;
+    margin: 50px 0 0 40%;
+}
+
+
 .form-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
 }
 
 .pet-display-container {
@@ -27,9 +37,6 @@ body {
     border: solid 5px black;
     background-color: beige;
 }
-
-
-
 
 
 .toggle-display {
