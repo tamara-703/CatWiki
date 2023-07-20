@@ -20,24 +20,10 @@ body {
 
 }
 
-.pet-display-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .img-display {
     margin-top: 50px;
     margin-left: 100px;
 }
-
-.labels p {
-    display: inline-block;
-    width: 200px;
-    border: solid 5px black;
-    background-color: beige;
-}
-
 
 .toggle-display {
     display: none;

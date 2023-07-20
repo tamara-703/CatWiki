@@ -28,11 +28,8 @@ function getSelectedValue(e)
             console.log(item);
             const imgEl = document.createElement('img');
             imgEl.classList.add('card-img-top');
-            // imgEl.classList.add('img-display');
-            // imgEl.classList.add('img-thumbnail');
             imgEl.setAttribute('src', `${item.url}`);
 
-            //append image to the div element as a child
             petDisplayEl.append(imgEl);
 
             const nameEl = document.createElement('h5');
@@ -62,8 +59,7 @@ function getSelectedValue(e)
 
             petDisplayEl.append(petCardHolderEl);
             petDisplayEl.removeAttribute('style');
-            petDisplayEl.setAttribute('style', 'width: 18rem');
-            petDisplayEl.setAttribute('style', 'margin: 20px');
+            petDisplayEl.setAttribute('style', 'width: 50rem; margin: 20px 20px 20px 350px;');
 
 
             })
