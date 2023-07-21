@@ -6,11 +6,7 @@ const baseURL = "https://api.thecatapi.com/v1/images/search?";
 const apiKey =
   "d6UMByrl4eANDsX8UCdJzCqwHeH7zcdKlejRIUiVidyBfILxCyzTfjfMFsEyPhiI";
 
-let petDisplayEl = document.querySelector(".card");
-let petCardHolderEl = document.querySelector(".card-body");
-let mainContainerEl = document.querySelector(".form-container");
-let uListEl = document.querySelector(".list-group");
-let cardContainerEl = document.querySelector(".card-container");
+const cardContainerEl = document.querySelector(".card-container");
 
 document
   .querySelector(".cat-selection")
@@ -121,8 +117,7 @@ function getSelectedValue(e) {
       });
     });
   } else {
-    document
-      .querySelector(".card-container")
+    cardContainerEl
       .append(
         (document.createElement("h1").innerText =
           "We could not find any information on this cat. Try picking another one or clearing your selection.")
@@ -130,15 +125,9 @@ function getSelectedValue(e) {
   }
 }
 
-document.querySelector(".clear").addEventListener("click", () => {
-  location.reload();
-});
-
 const getStarRating = (rating) => {
   //filled star: &#9733
   //unfilled star: &#9734
-
-  console.log(rating)
 
     let text = "";
 
@@ -174,3 +163,7 @@ const getCatAPI = async (catBreed) => {
 
   return data;
 };
+
+document.querySelector(".clear").addEventListener("click", () => {
+    location.reload();
+  });
