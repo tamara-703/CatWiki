@@ -8,6 +8,8 @@ const apiKey =
 
 const cardContainerEl = document.querySelector(".card-container");
 
+const breedNames = []
+
 document
   .querySelector(".cat-selection")
   .addEventListener("change", getSelectedValue);
