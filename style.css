@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,600&display=swap');
+
+
 body {
     background-image: url("https://e0.pxfuel.com/wallpapers/541/770/desktop-wallpaper-white-plain-background-dirty-white.jpg");
     height: 100vh;
@@ -23,6 +26,12 @@ body {
 .img-display {
     margin-top: 50px;
     margin-left: 100px;
+}
+
+.change-font {
+
+    font-family: 'Archivo', sans-serif;
+
 }
 
 .toggle-display {

@@ -72,8 +72,6 @@ function getSelectedValue(e)
             dogListEl.innerText = `Dog friendly - ${item.breeds[0].dog_friendly} / 5`;
             dogListEl.classList.add('list-group-item');
 
-
-
             uListEl.append(originListEl,altListEl,affecListEl,adaptListEl,childListEl,dogListEl);
 
 
