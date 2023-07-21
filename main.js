@@ -113,7 +113,16 @@ function getSelectedValue(e) {
           "width: 50rem; margin: 20px 20px 20px 350px;"
         );
 
-        cardContainerEl.append(cardEl);
+        cardContainerEl.prepend(cardEl);
+
+        if(cardContainerEl.children.length > 1)
+        {
+            let lastChild = cardContainerEl.lastChild;
+            console.log("last child " + lastChild);
+            cardContainerEl.removeChild(lastChild);
+        }
+
+
       });
     });
   } else {
@@ -126,8 +135,6 @@ function getSelectedValue(e) {
 }
 
 const getStarRating = (rating) => {
-  //filled star: &#9733
-  //unfilled star: &#9734
 
     let text = "";
 
