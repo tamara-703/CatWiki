@@ -26,6 +26,17 @@ Github pages
 
 ### theCatApi - you can check out the full documentation [here](https://thecatapi.com/)
 
+## Endpoints used
+`images endpoint`
+
+https://api.thecatapi.com/v1/images/search?&api_key=<API_KEY>
+
+`breed endpoint`
+
+https://api.thecatapi.com/v1/images/search?breed_ids=<BREED_ID>&api_key=<API_KEY>
+
+
+
 
 ## User stories
 
