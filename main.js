@@ -6,10 +6,10 @@ const baseURL = "https://api.thecatapi.com/v1/images/search?";
 const apiKey =
   "d6UMByrl4eANDsX8UCdJzCqwHeH7zcdKlejRIUiVidyBfILxCyzTfjfMFsEyPhiI";
 
+//grab main div element
 const cardContainerEl = document.querySelector(".card-container");
 
-const breedNames = []
-
+//grab select element on change
 document
   .querySelector(".cat-selection")
   .addEventListener("change", getSelectedValue);
@@ -34,24 +34,24 @@ function getSelectedValue(e) {
         ulListEl.classList.add("list-group-flush");
         ulListEl.classList.add("change-font");
 
-        //image
+        //image element
         const imgEl = document.createElement("img");
         imgEl.classList.add("card-img-top");
         imgEl.setAttribute("src", `${item.url}`);
 
         cardEl.append(imgEl);
 
-        //h5
+        //h5 element
         const nameEl = document.createElement("h5");
         nameEl.innerText = `${item.breeds[0].name}`;
         nameEl.classList.add("card-title");
 
-        //paragraph
+        //paragraph element
         const descEl = document.createElement("p");
         descEl.innerText = `${item.breeds[0].description}`;
         descEl.classList.add("card-text");
 
-        //link
+        //link element
         const wikiEl = document.createElement("a");
         wikiEl.innerText = "Wikipedia";
         wikiEl.setAttribute("href", `${item.breeds[0].wikipedia_url}`);
@@ -59,7 +59,7 @@ function getSelectedValue(e) {
         wikiEl.classList.add("btn");
         wikiEl.classList.add("btn-primary");
 
-        //lists
+        //lists elements
         const originListEl = document.createElement("li");
         if (item.breeds[0].origin === "") {
           originListEl.innerText = `Origin - N/A`;
@@ -98,6 +98,7 @@ function getSelectedValue(e) {
         dogListEl.innerHTML = "Dog friendly - " + dogRating;
         dogListEl.classList.add("list-group-item");
 
+        //add all list elements to the ul element
         ulListEl.append(
           originListEl,
           altListEl,
@@ -115,8 +116,11 @@ function getSelectedValue(e) {
           "width: 50rem; margin: 20px 20px 20px 350px;"
         );
 
+        //add all elements to the main div element
         cardContainerEl.prepend(cardEl);
 
+        //check if the main div element is populated and remove the child if it
+        //this is to make sure that each time the user selects a breed from the drop down list, the old one gets removed
         if(cardContainerEl.children.length > 1)
         {
             let lastChild = cardContainerEl.lastChild;
@@ -136,6 +140,7 @@ function getSelectedValue(e) {
   }
 }
 
+//get star icon rating for each characteristic level available
 const getStarRating = (rating) => {
 
     let text = "";
@@ -164,6 +169,7 @@ const getStarRating = (rating) => {
     return text;
 };
 
+//fetch api
 const getCatAPI = async (catBreed) => {
   const resp = await fetch(
     `${baseURL}&breed_ids=${catBreed}&api_key=live_${apiKey}`
@@ -173,6 +179,7 @@ const getCatAPI = async (catBreed) => {
   return data;
 };
 
+//clears breed selection upon clicking the event button
 document.querySelector(".clear").addEventListener("click", () => {
     location.reload();
   });

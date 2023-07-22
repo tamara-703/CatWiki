@@ -1,5 +1,9 @@
 # CatWiki
 
+![logo](./logo.png)
+
+**Disclaimer:** I do not own this logo. It belongs to *Wiki Cat Coin*. You can find out more [here](https://coinmarketcap.com/community/profile/WikiCatCoin/)
+
 ## This is a simple app that allows users to select from a handful of breeds of cats, displaying information on each
 
 ## Technologies used
